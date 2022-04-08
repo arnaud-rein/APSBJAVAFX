@@ -182,7 +182,7 @@ public class SecondaryController {
 
             int rows = statement.executeUpdate(sql);
             if (rows > 0) {
-                System.out.println("A new user was inserted successfully!");
+                System.out.println("A new user was inserted successfully!!!!");
             }
             
            /* connection.close();    */

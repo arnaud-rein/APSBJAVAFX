@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ram.PrimaryController">
+   <left>
+      <AnchorPane prefHeight="62.0" prefWidth="22.0" style="-fx-background-color: #FEC260;" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <AnchorPane prefHeight="18.0" prefWidth="600.0" style="-fx-background-color: #FEC260;" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <AnchorPane prefHeight="191.0" prefWidth="560.0" style="-fx-background-color: #FEC260;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="473.0" layoutY="446.0" mnemonicParsing="false" onAction="#switchToConnexion" text="page test" />
+            <Button fx:id="button" layoutX="387.0" layoutY="446.0" mnemonicParsing="false" onAction="#switchToSecondary" text="valider" />
+            <Button fx:id="validation" layoutX="387.0" layoutY="488.0" mnemonicParsing="false" onAction="#valid" text="validation user et passwd" />
+            <Button fx:id="testcss" layoutX="574.0" layoutY="446.0" mnemonicParsing="false" onAction="#ok" text="ok ok " />
+            <PasswordField fx:id="password" layoutX="387.0" layoutY="387.0" />
+            <Label layoutX="289.0" layoutY="386.0" text="password" textFill="#dc1111">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="556.0" layoutY="346.0" mnemonicParsing="false" onAction="#demon" text="afficher mdp et id" />
+            <Button layoutX="189.0" layoutY="46.0" mnemonicParsing="false" onAction="#switchToTestdimension" text="page test dimension" />
+            <TextField fx:id="username" layoutX="387.0" layoutY="347.0" />
+            <Label layoutX="270.0" layoutY="344.0" text="ursename" textFill="#d9ef12">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="690.0" layoutY="202.0" mnemonicParsing="false" onAction="#bdd" style="-fx-background-color: #F9D371; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;" text="se connecter" />
+            <TextField fx:id="validerbdd" layoutX="274.0" layoutY="204.0" prefHeight="22.0" prefWidth="106.0" promptText="Username">
+               <font>
+                  <Font name="Consolas" size="11.0" />
+               </font></TextField>
+            <Label fx:id="erreur" layoutX="313.0" layoutY="282.0" prefHeight="18.0" prefWidth="287.0" textFill="#bf2727">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="413.0" layoutY="255.0" mnemonicParsing="false" onAction="#voirmotdepasse" style="-fx-background-color: white;" text="voir password">
+               <font>
+                  <Font name="Constantia" size="9.0" />
+               </font>
+            </Button>
+            <Label fx:id="voirmdp" layoutX="413.0" layoutY="232.0" prefHeight="18.0" prefWidth="250.0" />
+            <PasswordField fx:id="passwordfield" layoutX="413.0" layoutY="204.0" prefHeight="22.0" prefWidth="254.0" promptText="Password">
+               <font>
+                  <Font name="Consolas" size="11.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="62.0" prefWidth="17.0" style="-fx-background-color: #FEC260;" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <AnchorPane prefHeight="10.0" prefWidth="600.0" style="-fx-background-color: #FEC260;" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

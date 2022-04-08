@@ -99,7 +99,7 @@ public class PrimaryController {
 
     public void valid(ActionEvent event) {
         if (username.getText().equals("arnaud")) {
-            lab.setText("ok ok c'est la même chose");
+            lab.setText("ok git c'est la même chose");
         } else {
             lab.setText("ah ah ah, bien essayer mais tu t'es tromper, retente une fois");
         }

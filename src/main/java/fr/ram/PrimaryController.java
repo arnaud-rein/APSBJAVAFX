@@ -126,7 +126,7 @@ public class PrimaryController {
         String username = "root";
         String password = "";
 
-        String req = "SELECT username, user_id, email, password FROM users  ";
+        String req = "SELECT username, user_id, email, password FROM users ";
         
 
         try (Connection Conn = DriverManager.getConnection(dbURL, username, password)) {

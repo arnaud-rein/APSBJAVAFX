@@ -17,8 +17,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 1000, 700);/*                                                           * c'est ici que l'on règle la fenêtre qui va apparaitre et on
-                                                           * doit
+        scene = new Scene(loadFXML("primary"), 1000, 700);
+        /*scene = new Scene(loadFXML("secondary"),500,600);*/ /* c'est ici que l'on règle la fenêtre qui va apparaitre et on doit
                                                            * aller dans scene builder pour modifier les dimensions nous
                                                            * mêmes avec les anchopanes top/center/...
                                                            */

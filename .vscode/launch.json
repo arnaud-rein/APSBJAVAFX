@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch usermanager",
+            "request": "launch",
+            "mainClass": "fr.ram/fr.ram.usermanager",
+            "projectName": "randomemory"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

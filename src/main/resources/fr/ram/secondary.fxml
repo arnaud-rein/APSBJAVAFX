@@ -21,8 +21,8 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantité" x="250.0" y="60.0" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Montant unitaire" x="355.0" y="60.0" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total" x="510.0" y="60.0" />
-            <Button layoutX="336.0" layoutY="290.0" mnemonicParsing="false" onAction="#qttunitairetotal" prefHeight="30.0" text="clique pour convertir" />
-            <Button layoutX="419.0" layoutY="522.0" mnemonicParsing="false" onAction="#bdd2" text="insérer dans la bdd et envoyer fiche au comptable" />
+            <Button layoutX="336.0" layoutY="250.0" mnemonicParsing="false" onAction="#qttunitairetotal" prefHeight="30.0" text="clique pour convertir" />
+            <Button layoutX="215.0" layoutY="458.0" mnemonicParsing="false" onAction="#bdd2" text="insérer dans la bdd et envoyer fiche au comptable" />
             <TextField fx:id="quantite" layoutX="250.0" layoutY="95.0" prefHeight="20.0" prefWidth="65.0" />
             <TextField fx:id="montantunitaire" layoutX="355.0" layoutY="95.0" prefHeight="20.0" prefWidth="65.0" />
             <TextField fx:id="total" layoutX="510.0" layoutY="95.0" prefHeight="20.0" prefWidth="65.0" />
@@ -32,6 +32,25 @@
             <TextField fx:id="quantite3" layoutX="250.0" layoutY="215.0" prefHeight="20.0" prefWidth="65.0" />
             <TextField fx:id="montantunitaire3" layoutX="355.0" layoutY="215.0" prefHeight="20.0" prefWidth="65.0" />
             <TextField fx:id="total3" layoutX="510.0" layoutY="215.0" prefHeight="20.0" prefWidth="65.0" />
+            <TextField fx:id="libel" layoutX="242.0" layoutY="363.0" prefHeight="26.0" prefWidth="128.0" />
+            <TextField fx:id="montanthf" layoutX="388.0" layoutY="363.0" prefHeight="26.0" prefWidth="128.0" />
+            <Text layoutX="142.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date" />
+            <Text layoutX="293.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="libellé" wrappingWidth="44.03045654296875" />
+            <Text layoutX="429.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Montant" />
+            <Label layoutX="263.0" layoutY="302.0" text="Autres frais">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="416.0" layoutY="425.0" text="signature">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cout" layoutX="510.0" layoutY="252.0" prefHeight="26.0" prefWidth="66.0" />
+            <Label fx:id="myLabel" layoutX="93.0" layoutY="425.0" prefHeight="26.0" prefWidth="121.0" />
+            <DatePicker fx:id="mydatepicker" layoutX="95.0" layoutY="363.0" onAction="#getDate" prefHeight="26.0" prefWidth="121.0" />
+            <Label fx:id="ficheEnvoi" layoutX="232.0" layoutY="514.0" prefHeight="18.0" prefWidth="200.0" />
          </children>
          <BorderPane.margin>
             <Insets />
@@ -57,7 +76,6 @@
    <left>
       <AnchorPane prefHeight="580.0" prefWidth="295.0" style="-fx-background-color: #F38181;" BorderPane.alignment="CENTER">
          <children>
-            <DatePicker fx:id="mydatepicker" layoutX="95.0" layoutY="290.0" onAction="#getDate" prefHeight="26.0" prefWidth="121.0" />
             <TextField fx:id="email1" layoutX="92.0" layoutY="230.0" prefHeight="26.0" prefWidth="121.0" promptText="email " />
             <TextField fx:id="usernamefield" layoutX="95.0" layoutY="170.0" prefHeight="26.0" prefWidth="121.0" promptText="username" />
             <TextField fx:id="nom" layoutX="95.0" layoutY="110.0" prefHeight="26.0" prefWidth="121.0" promptText="Nom" />
@@ -67,7 +85,8 @@
                   <Font name="Berlin Sans FB Demi Bold" size="16.0" />
                </font>
             </Text>
-            <Label fx:id="myLabel" layoutX="95.0" layoutY="350.0" prefHeight="26.0" prefWidth="121.0" />
+            <DatePicker fx:id="datecreation" layoutX="92.0" layoutY="290.0" onAction="#getDate2" prefHeight="26.0" prefWidth="129.0" />
+            <Label fx:id="datecreationrecup" layoutX="95.0" layoutY="354.0" prefHeight="18.0" prefWidth="114.0" />
          </children>
       </AnchorPane>
    </left>

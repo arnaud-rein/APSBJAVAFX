@@ -8,20 +8,18 @@ import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+/*import javafx.scene.control.Button;*/
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
+/*import javafx.scene.control.Label;*/
 import javafx.scene.control.TextField;
 
 
 public class ConnexionController {
     
   
-    @FXML
-    private Button btnValider;
+    
 
-    @FXML
-    private TextField resultatid;
+   
 
     @FXML
     private TextField recupereid;
@@ -29,17 +27,47 @@ public class ConnexionController {
     @FXML
     private DatePicker date;
 
+    
+
+    
+   
+
+    
     @FXML
-    private TextField testdate;
+    private TextField recuperematricule;
 
     @FXML
-    private Label labqtt;
+    private TextField recuperenom;
+   
 
     @FXML
-    private Label labmontant;
+    private TextField matriculeShow;
 
     @FXML
-    private Label labmatricule;
+    private TextField nomShow;
+
+    @FXML
+    private TextField montant;
+
+    @FXML
+    private TextField datecreation;
+
+    @FXML
+    private TextField montanthf;
+
+    @FXML
+    private TextField dateFraisHf;
+
+    @FXML
+    private TextField libelFraisHf;
+
+    @FXML
+    private TextField voiture;
+
+    @FXML
+    private TextField prenom;
+
+    
 
 
     
@@ -114,29 +142,66 @@ public class ConnexionController {
             
             
             
-            String nombreinit = recupereid.getText();
-            int idnombre = Integer.parseInt(nombreinit);
+            /*String nombreinit = recupereid.getText();
+            int idnombre = Integer.parseInt(nombreinit);*/
+
+            String nomrecup = recuperenom.getText();
+            String matriculerecup = recuperematricule.getText();
             
 
           /*le code avec la bdd sampleDB fonctionne String sql = "SELECT user_id, username, matricule, quantite, montantunitaire FROM users WHERE user_id = '"+idnombre+"' ";*/
-            String sql = "SELECT id_vi, matricule, nom, prenom, fk_ve, id_ve, vehicule FROM visiteur  INNER JOIN typevehicule ON visiteur.fk_ve = typevehicule.id_ve WHERE id_vi='"+idnombre+"' ";  
+            /*String sql = "SELECT id_vi, matricule, nom, prenom, fk_ve, id_ve, vehicule FROM visiteur  INNER JOIN typevehicule ON visiteur.fk_ve = typevehicule.id_ve WHERE id_vi='"+idnombre+"' "; */
+           /* String sql = "SELECT id_vi, matricule, nom, prenom, fk_ve, id_ve, vehicule FROM visiteur WHERE nom = '"+nomrecup+"' INNER JOIN typevehicule ON visiteur.fk_ve = typevehicule.id_ve";*/
 
-            ResultSet rs = statement.executeQuery(sql);
+            /*String sql = "SELECT id_vi, matricule, nom, prenom, fk_ve FROM visiteur WHERE nom = '"+nomrecup+"'";*/
+
+            String sql = "SELECT id_vi, matricule, nom, prenom, fk_ve, id_ve, vehicule, cout, date_creation, date, libel, montant FROM visiteur INNER JOIN typevehicule ON visiteur.fk_ve = typevehicule.id_ve INNER JOIN fiche ON visiteur.id_vi = fiche.fk_vi INNER JOIN frais_hf ON fiche.id_fi = frais_hf.fk_fi2 WHERE nom = '"+nomrecup+"' AND '"+matriculerecup+"'   ";
+            /*String lqs = "INSERT INTO fiche(date_validation) VALUES('2222-06-06')";*/
+
+            ResultSet rs = statement.executeQuery(sql);             
+            
+           
+            
+            /*statement.executeQuery(lqs);*/
+            
+            
+                             
 
             while (rs.next()){       
                               
                
-               resultatid.setText(rs.getString("nom"));
-               labqtt.setText(rs.getString("prenom"));
-               labmontant.setText(rs.getString("vehicule"));
-               labmatricule.setText(rs.getString("matricule"));
-            }          
+               
+                           
+               
+
+
+              
+               nomShow.setText(rs.getString("nom"));
+               matriculeShow.setText(rs.getString("matricule"));
+               montant.setText(rs.getString("cout"));
+
+
+               datecreation.setText(rs.getString("date_creation"));
+               montanthf.setText(rs.getString("montant"));
+               libelFraisHf.setText(rs.getString("libel"));
+
+
+               dateFraisHf.setText(rs.getString("date"));
+               prenom.setText(rs.getString("prenom"));
+               voiture.setText(rs.getString("vehicule"));
+               
+            }
+            
+           
             
                   
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+
+
+        
 
     }
 

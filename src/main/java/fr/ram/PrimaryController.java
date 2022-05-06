@@ -122,11 +122,11 @@ public class PrimaryController {
      */
 
     public void bdd(ActionEvent event) throws IOException {
-        String dbURL = "jdbc:mysql://localhost:3306/sampledb";
+        String dbURL = "jdbc:mysql://localhost:3306/fiche";
         String username = "root";
         String password = "";
 
-        String req = "SELECT username, user_id, email, password FROM users ";
+        String req = "SELECT nom, type_visiteur, password FROM visiteur ";
         
 
         try (Connection Conn = DriverManager.getConnection(dbURL, username, password)) {
@@ -142,19 +142,19 @@ public class PrimaryController {
 
             
             while (rs.next()){
-                String name = rs.getString("username");
-                String mail = rs.getString("email"); 
+                String name = rs.getString("nom");     
+                String type =rs.getString("type_visiteur");          
                 String passwordbdd = rs.getString("password");
                  
                 
                
                 
-                if(validerbdd.getText().equals(name) && mail.equals("arnaud")&& passwordfield.getText().equals(passwordbdd)){
+                if(validerbdd.getText().equals(name) && type.equals("visiteur")&& passwordfield.getText().equals(passwordbdd)){
                     switchToSecondary();
                 
                 /*System.out.println(String.format(name));
                 badlab.setText(name);*/}
-                if(validerbdd.getText().equals(name) && mail.equals("rein") && passwordfield.getText().equals(passwordbdd)){
+                if(validerbdd.getText().equals(name) && type.equals("comptable") && passwordfield.getText().equals(passwordbdd)){
                     switchToConnexion();
                 }else{
                     erreur.setText("erreur dans l'username ou le password");

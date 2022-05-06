@@ -12,52 +12,63 @@
 <AnchorPane prefHeight="700.0" prefWidth="1000.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ram.ConnexionController">
          <children>
       <Button layoutX="832.0" layoutY="22.0" mnemonicParsing="false" onAction="#switchToPrimary" text="retour au menu" />
-      <TextField fx:id="recupereid" layoutX="40.0" layoutY="111.0" />
-      <TextField fx:id="resultatid" layoutX="40.0" layoutY="145.0" />
-      <Button layoutX="190.0" layoutY="111.0" mnemonicParsing="false" onAction="#bddrecupere" text="affiche resultat" />
-      <DatePicker fx:id="date" layoutX="45.0" layoutY="565.0" />
-      <Label fx:id="labqtt" layoutX="87.0" layoutY="184.0" text="Label" />
-      <Label fx:id="labmatricule" layoutX="87.0" layoutY="223.0" text="Label" />
-      <Label fx:id="labmontant" layoutX="87.0" layoutY="275.0" text="Label" />
-      <Label layoutX="206.0" layoutY="417.0" text="Label" />
-      <Label layoutX="155.0" layoutY="408.0" text="Label" />
-      <Label layoutX="169.0" layoutY="457.0" text="Label" />
-      <Label layoutX="486.0" layoutY="149.0" text="visiteur" />
-      <Label layoutX="563.0" layoutY="149.0" text="matricule" />
-      <Label layoutX="638.0" layoutY="149.0" text="nom " />
-      <Label layoutX="686.0" layoutY="149.0" text="prenom" />
-      <Label layoutX="492.0" layoutY="193.0" text="Mois" />
-      <Text fill="#e71111" layoutX="364.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="frais forfaitaires" x="95.0" y="60.0" />
+      <TextField fx:id="recupereid" layoutX="220.0" layoutY="82.0" promptText="ID" />
+      <Button layoutX="423.0" layoutY="35.0" mnemonicParsing="false" onAction="#bddrecupere" text="affiche resultat" />
+      <DatePicker layoutX="45.0" layoutY="502.0" />
+      <Label layoutX="658.0" layoutY="110.0" text="visiteur" textFill="#f5bd1d">
+         <font>
+            <Font size="21.0" />
+         </font></Label>
+      <Label layoutX="445.0" layoutY="150.0" text="matricule" />
+      <Label layoutX="737.0" layoutY="149.0" text="nom " />
+      <Label layoutX="838.0" layoutY="149.0" text="prenom" />
+      <Text fill="#f5bd1d" layoutX="522.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="frais forfaitaires" x="95.0" y="60.0">
+         <font>
+            <Font size="22.0" />
+         </font></Text>
       <Text layoutX="332.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantité" x="250.0" y="60.0" />
       <Text layoutX="308.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Montant unitaire" x="355.0" y="60.0" />
       <Text layoutX="295.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" x="510.0" y="60.0" />
       <Text fill="#fc2d2d" layoutX="364.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nuitée" x="95.0" y="110.0" />
       <Text fill="#d40e0e" layoutX="362.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Repas Midi" x="95.0" y="170.0" />
       <Text fill="#d41515" layoutX="364.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kilométrage" x="95.0" y="230.0" />
-      <TextField layoutX="570.0" layoutY="319.0" prefHeight="26.0" prefWidth="59.0" />
-      <TextField layoutX="570.0" layoutY="375.0" prefHeight="26.0" prefWidth="59.0" />
-      <TextField layoutX="570.0" layoutY="422.0" prefHeight="26.0" prefWidth="59.0" />
-      <TextField layoutX="662.0" layoutY="318.0" prefHeight="26.0" prefWidth="89.0" />
-      <TextField layoutX="669.0" layoutY="375.0" prefHeight="26.0" prefWidth="82.0" />
-      <TextField layoutX="675.0" layoutY="422.0" prefHeight="26.0" prefWidth="82.0" />
-      <TextField layoutX="790.0" layoutY="318.0" prefHeight="26.0" prefWidth="82.0" />
-      <TextField layoutX="777.0" layoutY="375.0" prefHeight="26.0" prefWidth="82.0" />
-      <TextField layoutX="777.0" layoutY="420.0" prefHeight="26.0" prefWidth="82.0" />
-      <Label layoutX="576.0" layoutY="475.0" text="autres frais" />
-      <Label layoutX="487.0" layoutY="493.0" text="Date" />
-      <Label layoutX="591.0" layoutY="493.0" text="Libellé" />
-      <Label layoutX="702.0" layoutY="493.0" text="Montant" />
-      <TextField layoutX="470.0" layoutY="520.0" prefHeight="26.0" prefWidth="59.0" />
-      <TextField layoutX="578.0" layoutY="520.0" prefHeight="26.0" prefWidth="59.0" />
-      <TextField layoutX="698.0" layoutY="520.0" prefHeight="26.0" prefWidth="59.0" />
-      <Label layoutX="638.0" layoutY="582.0" text="Total" />
-      <Label layoutX="702.0" layoutY="582.0" text="Montant total" />
-      <Label layoutX="593.0" layoutY="627.0" text="Date validation" />
-      <Label layoutX="702.0" layoutY="627.0" text="lieu de validation" />
-      <Label layoutX="504.0" layoutY="80.0" text="Remboursement frais engagés" textFill="#c71b1b">
+      <TextField layoutX="570.0" layoutY="320.0" prefHeight="26.0" prefWidth="59.0" />
+      <TextField layoutX="570.0" layoutY="365.0" prefHeight="26.0" prefWidth="59.0" />
+      <TextField layoutX="570.0" layoutY="410.0" prefHeight="26.0" prefWidth="59.0" />
+      <TextField layoutX="662.0" layoutY="320.0" prefHeight="26.0" prefWidth="89.0" />
+      <TextField layoutX="662.0" layoutY="365.0" prefHeight="26.0" prefWidth="89.0" />
+      <TextField layoutX="662.0" layoutY="410.0" prefHeight="26.0" prefWidth="89.0" />
+      <TextField layoutX="790.0" layoutY="320.0" prefHeight="26.0" prefWidth="82.0" />
+      <TextField layoutX="790.0" layoutY="365.0" prefHeight="26.0" prefWidth="82.0" />
+      <TextField layoutX="790.0" layoutY="410.0" prefHeight="26.0" prefWidth="82.0" />
+      <Label layoutX="634.0" layoutY="497.0" text="autres frais" textFill="#f5bd1d">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label layoutX="587.0" layoutY="533.0" text="Date" />
+      <Label layoutX="674.0" layoutY="533.0" text="Libellé" />
+      <Label layoutX="794.0" layoutY="533.0" text="Montant" />
+      <TextField fx:id="dateFraisHf" layoutX="570.0" layoutY="564.0" prefHeight="26.0" prefWidth="59.0" />
+      <TextField fx:id="libelFraisHf" layoutX="662.0" layoutY="564.0" prefHeight="26.0" prefWidth="59.0" />
+      <TextField fx:id="montant" layoutX="800.0" layoutY="450.0" prefHeight="26.0" prefWidth="59.0" />
+      <Label layoutX="474.0" layoutY="627.0" text="Total" />
+      <Label layoutX="810.0" layoutY="645.0" text="Montant total" />
+      <Label layoutX="45.0" layoutY="467.0" text="Date validation" />
+      <Label layoutX="670.0" layoutY="645.0" text="lieu de validation" />
+      <Label layoutX="557.0" layoutY="67.0" text="Remboursement frais engagés" textFill="#c71b1b">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
+      <TextField fx:id="recuperematricule" layoutX="34.0" layoutY="35.0" promptText="matricule" />
+      <TextField fx:id="recuperenom" layoutX="220.0" layoutY="35.0" promptText="nom" />
+      <TextField fx:id="matriculeShow" layoutX="428.0" layoutY="179.0" prefHeight="26.0" prefWidth="82.0" />
+      <TextField fx:id="nomShow" layoutX="710.0" layoutY="180.0" prefHeight="26.0" prefWidth="82.0" />
+      <TextField fx:id="prenom" layoutX="818.0" layoutY="180.0" prefHeight="26.0" prefWidth="82.0" />
+      <TextField fx:id="datecreation" layoutX="542.0" layoutY="180.0" />
+      <Text layoutX="582.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date création" />
+      <TextField fx:id="montanthf" layoutX="790.0" layoutY="564.0" prefHeight="26.0" prefWidth="58.0" />
+      <TextField fx:id="voiture" layoutX="885.0" layoutY="410.0" prefHeight="26.0" prefWidth="89.0" />
+      <Button layoutX="158.0" layoutY="194.0" mnemonicParsing="false" onAction="#bddrecupere" text="Button" />
          </children>
       </AnchorPane>

@@ -1,6 +1,10 @@
 package fr.ram;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -32,8 +36,7 @@ public class TestdimensionController {
     @FXML
     private TextField keykey;
 
-    @FXML
-    private TextField resultkey;
+   
 
     @FXML
     private TextField testinput;
@@ -43,6 +46,14 @@ public class TestdimensionController {
 
     @FXML
     private Label myLabel;
+
+    @FXML
+    private TextField reponsevalidation;
+
+    @FXML
+    private TextField idvalidation;
+
+
    
 
     public void qttunitairetotal(ActionEvent event) {
@@ -66,44 +77,40 @@ public class TestdimensionController {
             LocalDate mydate = mydatepicker.getValue();
             String newdate = mydate.format(DateTimeFormatter.ofPattern("MM-dd-yyyy"));
             myLabel.setText(newdate.toString());
-        }
+        }        
+            
+       
+            public void bddrecupere2(ActionEvent event) throws IOException {
+                String dbURL = "jdbc:mysql://localhost:3306/fiche";
+                String username = "root";
+                String password = "";
+
+                try (Connection Conn3 = DriverManager.getConnection(dbURL, username, password)) {
+            
+                    java.sql.Statement statement = Conn3.createStatement();   
 
 
+                    String selection = idvalidation.getText();
+
+                    String sql = "SELECT validation, date_creation,fk_vi FROM fiche WHERE fk_vi='"+selection+"'";
+
+                    ResultSet rs =  statement.executeQuery(sql);  
+
+                    while (rs.next()){                             
+                           
+                      reponsevalidation.setText(rs.getString("validation"));
+                        
+                     }
 
 
         
-            
-        /*
-            @FXML  // <== perhaps you had this missing??
-           public void keyPressed(KeyEvent event) {
-                switch (event.getCode()) {
-                case LEFT:
-                case KP_LEFT:
-                    System.out.println("to the left");
-                    break;
-                case RIGHT:
-                case KP_RIGHT:
-                    System.out.println("to the right");
-                    break;
-                default:
-                    break;
-                }
-            }*/
-
-            
-            /* un essai de saisi en direct 
-            public void touche(TouchEvent event){
-                TouchPoint recuperetest = event.getTouchPoint();
-
-                resultkey.setText(recuperetest);
+            } catch (SQLException ex) {
+                ex.printStackTrace();
             }
-
-
-            */
-        
-
-
-        
-
+    
+    
+            
+    
+        }
     
 }

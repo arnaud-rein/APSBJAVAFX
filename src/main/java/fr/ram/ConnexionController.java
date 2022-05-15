@@ -5,12 +5,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 /*import javafx.scene.control.Button;*/
 import javafx.scene.control.DatePicker;
-/*import javafx.scene.control.Label;*/
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 
@@ -24,11 +26,11 @@ public class ConnexionController {
     @FXML
     private TextField recupereid;
 
-    @FXML
-    private DatePicker date;
-
     
 
+    
+    @FXML
+    private Label affichedate;
     
    
 
@@ -66,6 +68,28 @@ public class ConnexionController {
 
     @FXML
     private TextField prenom;
+
+    @FXML
+     private TextField lieuvalidation;
+
+     @FXML
+     private DatePicker datepique;
+
+     @FXML
+     private Label labdatepique;
+
+     @FXML
+     private TextField idcool;
+
+     @FXML
+     private TextField lieuvalider;
+
+     @FXML
+     private TextField validation;
+
+     
+
+     
 
     
 
@@ -117,6 +141,18 @@ public class ConnexionController {
     }
 
 
+    public void getDate2(ActionEvent event){
+
+        LocalDate mydate = datepique.getValue();
+        String newdate = mydate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        labdatepique.setText(newdate.toString());
+        
+    }
+    
+
+
+    
+
     /*private void recuperedate(ActionEvent event)throws IOException{
         date2 = date.getValue();
         testdate.setText(date2);
@@ -147,6 +183,10 @@ public class ConnexionController {
 
             String nomrecup = recuperenom.getText();
             String matriculerecup = recuperematricule.getText();
+
+            /*String idd = idcool.getText();*/
+
+            /*String daterecuppique = labdatepique.getText();*/
             
 
           /*le code avec la bdd sampleDB fonctionne String sql = "SELECT user_id, username, matricule, quantite, montantunitaire FROM users WHERE user_id = '"+idnombre+"' ";*/
@@ -157,8 +197,10 @@ public class ConnexionController {
 
             String sql = "SELECT id_vi, matricule, nom, prenom, fk_ve, id_ve, vehicule, cout, date_creation, date, libel, montant FROM visiteur INNER JOIN typevehicule ON visiteur.fk_ve = typevehicule.id_ve INNER JOIN fiche ON visiteur.id_vi = fiche.fk_vi INNER JOIN frais_hf ON fiche.id_fi = frais_hf.fk_fi2 WHERE nom = '"+nomrecup+"' AND '"+matriculerecup+"'   ";
             /*String lqs = "INSERT INTO fiche(date_validation) VALUES('2222-06-06')";*/
-
-            ResultSet rs = statement.executeQuery(sql);             
+            
+            
+            ResultSet rs = statement.executeQuery(sql); 
+            /*statement.executeQuery(lqs);  */          
             
            
             
@@ -189,6 +231,8 @@ public class ConnexionController {
                dateFraisHf.setText(rs.getString("date"));
                prenom.setText(rs.getString("prenom"));
                voiture.setText(rs.getString("vehicule"));
+
+               idcool.setText(rs.getString("id_vi"));
                
             }
             
@@ -205,6 +249,41 @@ public class ConnexionController {
 
     }
 
+
+    public void bddrecupere2(ActionEvent event) throws IOException {
+        String dbURL = "jdbc:mysql://localhost:3306/fiche";
+        String username = "root";
+        String password = "";
+
+       
+
+        try (Connection Conn3 = DriverManager.getConnection(dbURL, username, password)) {
+            
+            java.sql.Statement statement = Conn3.createStatement();     
+
+
+            /*String daterecuppique = labdatepique.getText();*/
+            String nomnom = idcool.getText();
+
+            String dateasus= labdatepique.getText();
+
+            String lieulieu = lieuvalider.getText();
+
+            String valideca = validation.getText();
+            
+
+            String lqs = "UPDATE fiche SET date_validation = '"+dateasus+"', lieu_validation='"+lieulieu+"', validation='"+valideca+"' WHERE fk_vi ='"+nomnom+"' ";
+
+            statement.executeUpdate(lqs);  
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+
+        
+
+    }
     
     
     

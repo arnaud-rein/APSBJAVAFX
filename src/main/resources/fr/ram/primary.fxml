@@ -18,24 +18,9 @@
    <center>
       <AnchorPane prefHeight="191.0" prefWidth="560.0" style="-fx-background-color: #FEC260;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="473.0" layoutY="446.0" mnemonicParsing="false" onAction="#switchToConnexion" text="page test" />
-            <Button fx:id="button" layoutX="387.0" layoutY="446.0" mnemonicParsing="false" onAction="#switchToSecondary" text="valider" />
-            <Button fx:id="validation" layoutX="387.0" layoutY="488.0" mnemonicParsing="false" onAction="#valid" text="validation user et passwd" />
-            <Button fx:id="testcss" layoutX="574.0" layoutY="446.0" mnemonicParsing="false" onAction="#ok" text="ok ok " />
-            <PasswordField fx:id="password" layoutX="387.0" layoutY="387.0" />
-            <Label layoutX="289.0" layoutY="386.0" text="password" textFill="#dc1111">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Button layoutX="556.0" layoutY="346.0" mnemonicParsing="false" onAction="#demon" text="afficher mdp et id" />
-            <Button layoutX="189.0" layoutY="46.0" mnemonicParsing="false" onAction="#switchToTestdimension" text="page test dimension" />
-            <TextField fx:id="username" layoutX="387.0" layoutY="347.0" />
-            <Label layoutX="270.0" layoutY="344.0" text="ursename" textFill="#d9ef12">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
+            <Button layoutX="556.0" layoutY="446.0" mnemonicParsing="false" onAction="#switchToConnexion" text="Fiche à valider" />
+            <Button fx:id="button" layoutX="387.0" layoutY="446.0" mnemonicParsing="false" onAction="#switchToSecondary" text="Fiche à remplir" />
+            <Button layoutX="706.0" layoutY="446.0" mnemonicParsing="false" onAction="#switchToTestdimension" text="validation ou non" />
             <Button layoutX="690.0" layoutY="202.0" mnemonicParsing="false" onAction="#bdd" style="-fx-background-color: #F9D371; -fx-background-radius: 50; -fx-border-color: black; -fx-border-radius: 50;" text="se connecter" />
             <TextField fx:id="validerbdd" layoutX="274.0" layoutY="204.0" prefHeight="22.0" prefWidth="106.0" promptText="Username">
                <font>
